@@ -2,6 +2,8 @@
 
 A powerful AI library written from scratch in C with no dependencies, designed to provide developers with a wide range of AI tools, constructs, and implementations for ultimate performance.
 
+> ai.c is currently in its very early stages as the bare bones are scaffolded out, features are added, and tests are written. Do not expect stable functionality.
+
 ## Getting Started
 
 To get started with ai.c, follow these steps:
