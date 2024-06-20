@@ -8,10 +8,9 @@ A powerful AI library written from scratch in C with no dependencies, designed t
 
 To get started with ai.c, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/ai.c.git`
-2. Install the necessary dependencies.
-3. Build the project using the provided Makefile.
-4. Start exploring the examples and documentation.
+1. Clone the repository
+2. Build the project using the provided Makefile.
+3. Start exploring the examples and documentation.
 
 ## License
 
