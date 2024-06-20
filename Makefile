@@ -44,3 +44,6 @@ clean:
 
 format:
 	$(FORMAT) -i --style=file $(SRC_FILES) $(wildcard $(INCLUDE_DIR)/*.h) $(TEST_FILES)
+
+docs:
+	doxygen Doxyfile

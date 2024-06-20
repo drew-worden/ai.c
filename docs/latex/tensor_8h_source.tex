@@ -1,0 +1,147 @@
+\doxysection{tensor.\+h}
+\hypertarget{tensor_8h_source}{}\label{tensor_8h_source}\index{includes/tensor.h@{includes/tensor.h}}
+\mbox{\hyperlink{tensor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Include\ guard}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ TENSOR\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ TENSOR\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Includes}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ Tensor\ data\ type}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\_dtype}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ Tensor\ definition}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\_dtype}}*\ \mbox{\hyperlink{structTensor_aad155a6e7888f1f765b20fb7fa8b7e12}{data}};}
+\DoxyCodeLine{00015\ \ \ \textcolor{keywordtype}{size\_t}*\ \mbox{\hyperlink{structTensor_a6e16e74a31131e80911c86a33e042f5a}{shape}};}
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structTensor_a2f3adc07f414d9d6b0817d6287dc6074}{num\_dims}};}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structTensor_aa261f360ca06f4801847b09cd6c7552a}{num\_elements}};}
+\DoxyCodeLine{00018\ \}\ \mbox{\hyperlink{structTensor}{Tensor}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ Create\ a\ new\ tensor}}
+\DoxyCodeLine{00021\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00022\ \mbox{\hyperlink{tensor_8h_a79c589da0cfb358c0de4fe68216ed5d6}{tensor\_create}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}*\ shape,\ \textcolor{keywordtype}{size\_t}\ num\_dims);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ Free\ a\ tensor's\ memory}}
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00026\ \mbox{\hyperlink{tensor_8h_a95b9b24071b18357a52ce9bcb4b01878}{tensor\_free}}(\mbox{\hyperlink{structTensor}{Tensor}}*\ tensor);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ Get\ index\ of\ element\ in\ tensor}}
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{size\_t}}
+\DoxyCodeLine{00030\ \mbox{\hyperlink{tensor_8h_ac085d7993e6fe077b306d21cd69f13a9}{tensor\_get\_index}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}*\ indices);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ Get\ value\ of\ element\ in\ tensor}}
+\DoxyCodeLine{00033\ \mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\_dtype}}}
+\DoxyCodeLine{00034\ \mbox{\hyperlink{tensor_8h_a89edb53bdbac1819a0dd3aa62ec9fb0a}{tensor\_get\_value}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}*\ indices);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ Set\ value\ of\ element\ in\ tensor}}
+\DoxyCodeLine{00037\ \mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\_dtype}}}
+\DoxyCodeLine{00038\ \mbox{\hyperlink{tensor_8h_a36aa183db6ce7ddcacb008829f667fd4}{tensor\_set\_value}}(\mbox{\hyperlink{structTensor}{Tensor}}*\ tensor,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}*\ indices,\ \mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\_dtype}}\ value);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{//\ Pretty\ print\ tensor}}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00042\ \mbox{\hyperlink{tensor_8h_a5e984178a36a8cad68308a70227cda69}{tensor\_print}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ Check\ if\ two\ tensors\ are\ the\ same\ shape}}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00046\ \mbox{\hyperlink{tensor_8h_aae12fa50f537d17e88fddfb155b8699c}{tensor\_same\_shape}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor2);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{//\ Check\ if\ two\ tensors\ are\ equal}}
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00050\ \mbox{\hyperlink{tensor_8h_a7d4b119ada7a78badb4761069c56101c}{tensor\_equal}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor2);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ Compute\ the\ dot\ product\ of\ two\ tensors}}
+\DoxyCodeLine{00053\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00054\ \mbox{\hyperlink{tensor_8h_ae4acfbf0308fdfaa418fbdbda2a706b9}{tensor\_dot}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor2);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ Compute\ the\ element-\/wise\ sum\ of\ two\ tensors}}
+\DoxyCodeLine{00057\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00058\ \mbox{\hyperlink{tensor_8h_ad3bd9a9f5108f28c952ec72acb913234}{tensor\_add}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor2);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ Compute\ the\ element-\/wise\ difference\ of\ two\ tensors}}
+\DoxyCodeLine{00061\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00062\ \mbox{\hyperlink{tensor_8h_a13d0a4520ebea13ced9f89cb238903d9}{tensor\_subtract}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor2);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ Compute\ the\ element-\/wise\ product\ of\ two\ tensors}}
+\DoxyCodeLine{00065\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00066\ \mbox{\hyperlink{tensor_8h_abfb51fb60e31eb79fc051f651421c743}{tensor\_multiply}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor2);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{comment}{//\ Compute\ the\ element-\/wise\ division\ of\ two\ tensors}}
+\DoxyCodeLine{00069\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00070\ \mbox{\hyperlink{tensor_8h_aeea77f4a4cd149efe33df1354e558381}{tensor\_divide}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor2);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ Compute\ the\ element-\/wise\ power\ of\ a\ tensor}}
+\DoxyCodeLine{00073\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00074\ \mbox{\hyperlink{tensor_8h_acfc9f6c986cd76b7d7b611853add02c3}{tensor\_power}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor,\ \mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\_dtype}}\ power);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ Compute\ the\ element-\/wise\ square\ root\ of\ a\ tensor}}
+\DoxyCodeLine{00077\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00078\ \mbox{\hyperlink{tensor_8h_a4e289a939fb183352665cba860e79ff3}{tensor\_sqrt}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ Compute\ the\ element-\/wise\ exponential\ of\ a\ tensor}}
+\DoxyCodeLine{00081\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00082\ \mbox{\hyperlink{tensor_8h_a33d3155c52e478588c854d3e13108526}{tensor\_exp}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ Compute\ the\ element-\/wise\ natural\ logarithm\ of\ a\ tensor}}
+\DoxyCodeLine{00085\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00086\ \mbox{\hyperlink{tensor_8h_a77108bf105bc77ff0f5a524904ced2b6}{tensor\_log}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{comment}{//\ Compute\ the\ element-\/wise\ sine\ of\ a\ tensor}}
+\DoxyCodeLine{00089\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00090\ \mbox{\hyperlink{tensor_8h_aa2602d497e4d0f2e95cbda90af6b4870}{tensor\_sin}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{comment}{//\ Compute\ the\ element-\/wise\ cosine\ of\ a\ tensor}}
+\DoxyCodeLine{00093\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00094\ \mbox{\hyperlink{tensor_8h_a22248d4b7d8906092f34d624cf21989e}{tensor\_cos}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{comment}{//\ Compute\ the\ element-\/wise\ tangent\ of\ a\ tensor}}
+\DoxyCodeLine{00097\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00098\ \mbox{\hyperlink{tensor_8h_a64c5222bb3465b4fa1a3c9d0cee127ac}{tensor\_tan}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{comment}{//\ Compute\ the\ multiplication\ of\ a\ tensor\ by\ a\ scalar}}
+\DoxyCodeLine{00101\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00102\ \mbox{\hyperlink{tensor_8h_a0e39140939966e1f79ea3215a38b66af}{tensor\_scalar\_multiply}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor,\ \mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\_dtype}}\ scalar);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{comment}{//\ Compute\ the\ division\ of\ a\ tensor\ by\ a\ scalar}}
+\DoxyCodeLine{00105\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00106\ \mbox{\hyperlink{tensor_8h_a08bc9773d6f558d330c4b69e6031ea6d}{tensor\_scalar\_divide}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor,\ \mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\_dtype}}\ scalar);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{comment}{//\ Compute\ the\ power\ of\ a\ tensor\ by\ a\ scalar}}
+\DoxyCodeLine{00109\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00110\ \mbox{\hyperlink{tensor_8h_ae138401df9e8895bd8135229f46efd8f}{tensor\_scalar\_power}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor,\ \mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\_dtype}}\ scalar);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{comment}{//\ Compute\ the\ matrix\ multiplication\ of\ two\ tensors}}
+\DoxyCodeLine{00113\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00114\ \mbox{\hyperlink{tensor_8h_a43e358badad7a1918fc58447bcf3b6a8}{tensor\_matmul}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor2);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{comment}{//\ Compute\ the\ transpose\ of\ a\ tensor}}
+\DoxyCodeLine{00117\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00118\ \mbox{\hyperlink{tensor_8h_ab7ac54b83855c705253ee4e12247c28b}{tensor\_transpose}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{comment}{//\ Compute\ the\ sum\ of\ a\ tensor\ along\ a\ given\ axis}}
+\DoxyCodeLine{00121\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00122\ \mbox{\hyperlink{tensor_8h_ae579d18d165dbb4bc019ac22bdbda25d}{tensor\_sum}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor,\ \textcolor{keywordtype}{size\_t}\ axis);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{comment}{//\ Compute\ the\ mean\ of\ a\ tensor\ along\ a\ given\ axis}}
+\DoxyCodeLine{00125\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00126\ \mbox{\hyperlink{tensor_8h_af5d3e5d24e84a1b67797a71a6bcddc71}{tensor\_mean}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor,\ \textcolor{keywordtype}{size\_t}\ axis);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{comment}{//\ Compute\ the\ maximum\ of\ a\ tensor\ along\ a\ given\ axis}}
+\DoxyCodeLine{00129\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00130\ \mbox{\hyperlink{tensor_8h_adeeb7b797f78c9951b58ad40f698df6e}{tensor\_max}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor,\ \textcolor{keywordtype}{size\_t}\ axis);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{comment}{//\ Compute\ the\ minimum\ of\ a\ tensor\ along\ a\ given\ axis}}
+\DoxyCodeLine{00133\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00134\ \mbox{\hyperlink{tensor_8h_affb98325d8ab4e53d6e39968f844e0db}{tensor\_min}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor,\ \textcolor{keywordtype}{size\_t}\ axis);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{comment}{//\ Compute\ the\ mode\ of\ a\ tensor\ along\ a\ given\ axis}}
+\DoxyCodeLine{00137\ \mbox{\hyperlink{structTensor}{Tensor}}*}
+\DoxyCodeLine{00138\ \mbox{\hyperlink{tensor_8h_a97361a36b4b6ad2b034b4b7db5baaa40}{tensor\_mode}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structTensor}{Tensor}}*\ tensor,\ \textcolor{keywordtype}{size\_t}\ axis);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{comment}{//\ End\ of\ include\ guard}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

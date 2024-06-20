@@ -1,0 +1,266 @@
+\doxysection{lib/tensor.c File Reference}
+\hypertarget{tensor_8c}{}\label{tensor_8c}\index{lib/tensor.c@{lib/tensor.c}}
+{\ttfamily \#include "{}../includes/tensor.\+h"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for tensor.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_a79c589da0cfb358c0de4fe68216ed5d6}{tensor\+\_\+create}} (const size\+\_\+t \texorpdfstring{$\ast$}{*}shape, size\+\_\+t num\+\_\+dims)
+\item 
+void \mbox{\hyperlink{tensor_8c_a95b9b24071b18357a52ce9bcb4b01878}{tensor\+\_\+free}} (\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor)
+\item 
+size\+\_\+t \mbox{\hyperlink{tensor_8c_ac085d7993e6fe077b306d21cd69f13a9}{tensor\+\_\+get\+\_\+index}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor, const size\+\_\+t \texorpdfstring{$\ast$}{*}indices)
+\item 
+\mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\+\_\+dtype}} \mbox{\hyperlink{tensor_8c_a89edb53bdbac1819a0dd3aa62ec9fb0a}{tensor\+\_\+get\+\_\+value}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor, const size\+\_\+t \texorpdfstring{$\ast$}{*}indices)
+\item 
+\mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\+\_\+dtype}} \mbox{\hyperlink{tensor_8c_a36aa183db6ce7ddcacb008829f667fd4}{tensor\+\_\+set\+\_\+value}} (\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor, const size\+\_\+t \texorpdfstring{$\ast$}{*}indices, \mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\+\_\+dtype}} value)
+\item 
+void \mbox{\hyperlink{tensor_8c_a5e984178a36a8cad68308a70227cda69}{tensor\+\_\+print}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor)
+\item 
+int \mbox{\hyperlink{tensor_8c_aae12fa50f537d17e88fddfb155b8699c}{tensor\+\_\+same\+\_\+shape}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor1, const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor2)
+\item 
+int \mbox{\hyperlink{tensor_8c_a7d4b119ada7a78badb4761069c56101c}{tensor\+\_\+equal}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor1, const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor2)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_ae4acfbf0308fdfaa418fbdbda2a706b9}{tensor\+\_\+dot}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor1, const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor2)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_ad3bd9a9f5108f28c952ec72acb913234}{tensor\+\_\+add}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor1, const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor2)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_a13d0a4520ebea13ced9f89cb238903d9}{tensor\+\_\+subtract}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor1, const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor2)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_abfb51fb60e31eb79fc051f651421c743}{tensor\+\_\+multiply}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor1, const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor2)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_aeea77f4a4cd149efe33df1354e558381}{tensor\+\_\+divide}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor1, const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor2)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_acfc9f6c986cd76b7d7b611853add02c3}{tensor\+\_\+power}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor, \mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\+\_\+dtype}} power)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_a4e289a939fb183352665cba860e79ff3}{tensor\+\_\+sqrt}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_a33d3155c52e478588c854d3e13108526}{tensor\+\_\+exp}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_a77108bf105bc77ff0f5a524904ced2b6}{tensor\+\_\+log}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_aa2602d497e4d0f2e95cbda90af6b4870}{tensor\+\_\+sin}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_a22248d4b7d8906092f34d624cf21989e}{tensor\+\_\+cos}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_a64c5222bb3465b4fa1a3c9d0cee127ac}{tensor\+\_\+tan}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_a0e39140939966e1f79ea3215a38b66af}{tensor\+\_\+scalar\+\_\+multiply}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor, \mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\+\_\+dtype}} scalar)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_a08bc9773d6f558d330c4b69e6031ea6d}{tensor\+\_\+scalar\+\_\+divide}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor, \mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\+\_\+dtype}} scalar)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_ae138401df9e8895bd8135229f46efd8f}{tensor\+\_\+scalar\+\_\+power}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor, \mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\+\_\+dtype}} scalar)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_a43e358badad7a1918fc58447bcf3b6a8}{tensor\+\_\+matmul}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor1, const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor2)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_ab7ac54b83855c705253ee4e12247c28b}{tensor\+\_\+transpose}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_ae579d18d165dbb4bc019ac22bdbda25d}{tensor\+\_\+sum}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor, size\+\_\+t axis)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_af5d3e5d24e84a1b67797a71a6bcddc71}{tensor\+\_\+mean}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor, size\+\_\+t axis)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_adeeb7b797f78c9951b58ad40f698df6e}{tensor\+\_\+max}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor, size\+\_\+t axis)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_affb98325d8ab4e53d6e39968f844e0db}{tensor\+\_\+min}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor, size\+\_\+t axis)
+\item 
+\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tensor_8c_a97361a36b4b6ad2b034b4b7db5baaa40}{tensor\+\_\+mode}} (const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}tensor, size\+\_\+t axis)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{tensor_8c_ad3bd9a9f5108f28c952ec72acb913234}\label{tensor_8c_ad3bd9a9f5108f28c952ec72acb913234} 
+\index{tensor.c@{tensor.c}!tensor\_add@{tensor\_add}}
+\index{tensor\_add@{tensor\_add}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_add()}{tensor\_add()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor1,  }\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor2 }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_a22248d4b7d8906092f34d624cf21989e}\label{tensor_8c_a22248d4b7d8906092f34d624cf21989e} 
+\index{tensor.c@{tensor.c}!tensor\_cos@{tensor\_cos}}
+\index{tensor\_cos@{tensor\_cos}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_cos()}{tensor\_cos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+cos (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_a79c589da0cfb358c0de4fe68216ed5d6}\label{tensor_8c_a79c589da0cfb358c0de4fe68216ed5d6} 
+\index{tensor.c@{tensor.c}!tensor\_create@{tensor\_create}}
+\index{tensor\_create@{tensor\_create}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_create()}{tensor\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+create (\begin{DoxyParamCaption}\item[{const size\+\_\+t \texorpdfstring{$\ast$}{*}}]{shape,  }\item[{size\+\_\+t}]{num\+\_\+dims }\end{DoxyParamCaption})}
+
+Creates a new tensor with the given shape and number of dimensions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape} & The shape of the tensor. \\
+\hline
+{\em num\+\_\+dims} & The number of dimensions of the tensor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created tensor, or NULL if memory allocation fails. 
+\end{DoxyReturn}
+\Hypertarget{tensor_8c_aeea77f4a4cd149efe33df1354e558381}\label{tensor_8c_aeea77f4a4cd149efe33df1354e558381} 
+\index{tensor.c@{tensor.c}!tensor\_divide@{tensor\_divide}}
+\index{tensor\_divide@{tensor\_divide}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_divide()}{tensor\_divide()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+divide (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor1,  }\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor2 }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_ae4acfbf0308fdfaa418fbdbda2a706b9}\label{tensor_8c_ae4acfbf0308fdfaa418fbdbda2a706b9} 
+\index{tensor.c@{tensor.c}!tensor\_dot@{tensor\_dot}}
+\index{tensor\_dot@{tensor\_dot}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_dot()}{tensor\_dot()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor1,  }\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor2 }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_a7d4b119ada7a78badb4761069c56101c}\label{tensor_8c_a7d4b119ada7a78badb4761069c56101c} 
+\index{tensor.c@{tensor.c}!tensor\_equal@{tensor\_equal}}
+\index{tensor\_equal@{tensor\_equal}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_equal()}{tensor\_equal()}}
+{\footnotesize\ttfamily int tensor\+\_\+equal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor1,  }\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor2 }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_a33d3155c52e478588c854d3e13108526}\label{tensor_8c_a33d3155c52e478588c854d3e13108526} 
+\index{tensor.c@{tensor.c}!tensor\_exp@{tensor\_exp}}
+\index{tensor\_exp@{tensor\_exp}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_exp()}{tensor\_exp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+exp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_a95b9b24071b18357a52ce9bcb4b01878}\label{tensor_8c_a95b9b24071b18357a52ce9bcb4b01878} 
+\index{tensor.c@{tensor.c}!tensor\_free@{tensor\_free}}
+\index{tensor\_free@{tensor\_free}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_free()}{tensor\_free()}}
+{\footnotesize\ttfamily void tensor\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_ac085d7993e6fe077b306d21cd69f13a9}\label{tensor_8c_ac085d7993e6fe077b306d21cd69f13a9} 
+\index{tensor.c@{tensor.c}!tensor\_get\_index@{tensor\_get\_index}}
+\index{tensor\_get\_index@{tensor\_get\_index}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_get\_index()}{tensor\_get\_index()}}
+{\footnotesize\ttfamily size\+\_\+t tensor\+\_\+get\+\_\+index (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor,  }\item[{const size\+\_\+t \texorpdfstring{$\ast$}{*}}]{indices }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_a89edb53bdbac1819a0dd3aa62ec9fb0a}\label{tensor_8c_a89edb53bdbac1819a0dd3aa62ec9fb0a} 
+\index{tensor.c@{tensor.c}!tensor\_get\_value@{tensor\_get\_value}}
+\index{tensor\_get\_value@{tensor\_get\_value}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_get\_value()}{tensor\_get\_value()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\+\_\+dtype}} tensor\+\_\+get\+\_\+value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor,  }\item[{const size\+\_\+t \texorpdfstring{$\ast$}{*}}]{indices }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_a77108bf105bc77ff0f5a524904ced2b6}\label{tensor_8c_a77108bf105bc77ff0f5a524904ced2b6} 
+\index{tensor.c@{tensor.c}!tensor\_log@{tensor\_log}}
+\index{tensor\_log@{tensor\_log}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_log()}{tensor\_log()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+log (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_a43e358badad7a1918fc58447bcf3b6a8}\label{tensor_8c_a43e358badad7a1918fc58447bcf3b6a8} 
+\index{tensor.c@{tensor.c}!tensor\_matmul@{tensor\_matmul}}
+\index{tensor\_matmul@{tensor\_matmul}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_matmul()}{tensor\_matmul()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+matmul (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor1,  }\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor2 }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_adeeb7b797f78c9951b58ad40f698df6e}\label{tensor_8c_adeeb7b797f78c9951b58ad40f698df6e} 
+\index{tensor.c@{tensor.c}!tensor\_max@{tensor\_max}}
+\index{tensor\_max@{tensor\_max}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_max()}{tensor\_max()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+max (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor,  }\item[{size\+\_\+t}]{axis }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_af5d3e5d24e84a1b67797a71a6bcddc71}\label{tensor_8c_af5d3e5d24e84a1b67797a71a6bcddc71} 
+\index{tensor.c@{tensor.c}!tensor\_mean@{tensor\_mean}}
+\index{tensor\_mean@{tensor\_mean}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_mean()}{tensor\_mean()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+mean (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor,  }\item[{size\+\_\+t}]{axis }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_affb98325d8ab4e53d6e39968f844e0db}\label{tensor_8c_affb98325d8ab4e53d6e39968f844e0db} 
+\index{tensor.c@{tensor.c}!tensor\_min@{tensor\_min}}
+\index{tensor\_min@{tensor\_min}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_min()}{tensor\_min()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+min (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor,  }\item[{size\+\_\+t}]{axis }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_a97361a36b4b6ad2b034b4b7db5baaa40}\label{tensor_8c_a97361a36b4b6ad2b034b4b7db5baaa40} 
+\index{tensor.c@{tensor.c}!tensor\_mode@{tensor\_mode}}
+\index{tensor\_mode@{tensor\_mode}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_mode()}{tensor\_mode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+mode (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor,  }\item[{size\+\_\+t}]{axis }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_abfb51fb60e31eb79fc051f651421c743}\label{tensor_8c_abfb51fb60e31eb79fc051f651421c743} 
+\index{tensor.c@{tensor.c}!tensor\_multiply@{tensor\_multiply}}
+\index{tensor\_multiply@{tensor\_multiply}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_multiply()}{tensor\_multiply()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+multiply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor1,  }\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor2 }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_acfc9f6c986cd76b7d7b611853add02c3}\label{tensor_8c_acfc9f6c986cd76b7d7b611853add02c3} 
+\index{tensor.c@{tensor.c}!tensor\_power@{tensor\_power}}
+\index{tensor\_power@{tensor\_power}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_power()}{tensor\_power()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+power (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor,  }\item[{\mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\+\_\+dtype}}}]{power }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_a5e984178a36a8cad68308a70227cda69}\label{tensor_8c_a5e984178a36a8cad68308a70227cda69} 
+\index{tensor.c@{tensor.c}!tensor\_print@{tensor\_print}}
+\index{tensor\_print@{tensor\_print}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_print()}{tensor\_print()}}
+{\footnotesize\ttfamily void tensor\+\_\+print (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_aae12fa50f537d17e88fddfb155b8699c}\label{tensor_8c_aae12fa50f537d17e88fddfb155b8699c} 
+\index{tensor.c@{tensor.c}!tensor\_same\_shape@{tensor\_same\_shape}}
+\index{tensor\_same\_shape@{tensor\_same\_shape}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_same\_shape()}{tensor\_same\_shape()}}
+{\footnotesize\ttfamily int tensor\+\_\+same\+\_\+shape (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor1,  }\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor2 }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_a08bc9773d6f558d330c4b69e6031ea6d}\label{tensor_8c_a08bc9773d6f558d330c4b69e6031ea6d} 
+\index{tensor.c@{tensor.c}!tensor\_scalar\_divide@{tensor\_scalar\_divide}}
+\index{tensor\_scalar\_divide@{tensor\_scalar\_divide}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_scalar\_divide()}{tensor\_scalar\_divide()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+scalar\+\_\+divide (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor,  }\item[{\mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\+\_\+dtype}}}]{scalar }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_a0e39140939966e1f79ea3215a38b66af}\label{tensor_8c_a0e39140939966e1f79ea3215a38b66af} 
+\index{tensor.c@{tensor.c}!tensor\_scalar\_multiply@{tensor\_scalar\_multiply}}
+\index{tensor\_scalar\_multiply@{tensor\_scalar\_multiply}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_scalar\_multiply()}{tensor\_scalar\_multiply()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+scalar\+\_\+multiply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor,  }\item[{\mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\+\_\+dtype}}}]{scalar }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_ae138401df9e8895bd8135229f46efd8f}\label{tensor_8c_ae138401df9e8895bd8135229f46efd8f} 
+\index{tensor.c@{tensor.c}!tensor\_scalar\_power@{tensor\_scalar\_power}}
+\index{tensor\_scalar\_power@{tensor\_scalar\_power}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_scalar\_power()}{tensor\_scalar\_power()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+scalar\+\_\+power (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor,  }\item[{\mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\+\_\+dtype}}}]{scalar }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_a36aa183db6ce7ddcacb008829f667fd4}\label{tensor_8c_a36aa183db6ce7ddcacb008829f667fd4} 
+\index{tensor.c@{tensor.c}!tensor\_set\_value@{tensor\_set\_value}}
+\index{tensor\_set\_value@{tensor\_set\_value}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_set\_value()}{tensor\_set\_value()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\+\_\+dtype}} tensor\+\_\+set\+\_\+value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor,  }\item[{const size\+\_\+t \texorpdfstring{$\ast$}{*}}]{indices,  }\item[{\mbox{\hyperlink{tensor_8h_a3029841ecc5efeff8dbcc0c0c42f1756}{tensor\+\_\+dtype}}}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_aa2602d497e4d0f2e95cbda90af6b4870}\label{tensor_8c_aa2602d497e4d0f2e95cbda90af6b4870} 
+\index{tensor.c@{tensor.c}!tensor\_sin@{tensor\_sin}}
+\index{tensor\_sin@{tensor\_sin}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_sin()}{tensor\_sin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+sin (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_a4e289a939fb183352665cba860e79ff3}\label{tensor_8c_a4e289a939fb183352665cba860e79ff3} 
+\index{tensor.c@{tensor.c}!tensor\_sqrt@{tensor\_sqrt}}
+\index{tensor\_sqrt@{tensor\_sqrt}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_sqrt()}{tensor\_sqrt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+sqrt (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_a13d0a4520ebea13ced9f89cb238903d9}\label{tensor_8c_a13d0a4520ebea13ced9f89cb238903d9} 
+\index{tensor.c@{tensor.c}!tensor\_subtract@{tensor\_subtract}}
+\index{tensor\_subtract@{tensor\_subtract}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_subtract()}{tensor\_subtract()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+subtract (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor1,  }\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor2 }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_ae579d18d165dbb4bc019ac22bdbda25d}\label{tensor_8c_ae579d18d165dbb4bc019ac22bdbda25d} 
+\index{tensor.c@{tensor.c}!tensor\_sum@{tensor\_sum}}
+\index{tensor\_sum@{tensor\_sum}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_sum()}{tensor\_sum()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+sum (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor,  }\item[{size\+\_\+t}]{axis }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_a64c5222bb3465b4fa1a3c9d0cee127ac}\label{tensor_8c_a64c5222bb3465b4fa1a3c9d0cee127ac} 
+\index{tensor.c@{tensor.c}!tensor\_tan@{tensor\_tan}}
+\index{tensor\_tan@{tensor\_tan}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_tan()}{tensor\_tan()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+tan (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor }\end{DoxyParamCaption})}
+
+\Hypertarget{tensor_8c_ab7ac54b83855c705253ee4e12247c28b}\label{tensor_8c_ab7ac54b83855c705253ee4e12247c28b} 
+\index{tensor.c@{tensor.c}!tensor\_transpose@{tensor\_transpose}}
+\index{tensor\_transpose@{tensor\_transpose}!tensor.c@{tensor.c}}
+\doxysubsubsection{\texorpdfstring{tensor\_transpose()}{tensor\_transpose()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*} tensor\+\_\+transpose (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structTensor}{Tensor}} \texorpdfstring{$\ast$}{*}}]{tensor }\end{DoxyParamCaption})}
+

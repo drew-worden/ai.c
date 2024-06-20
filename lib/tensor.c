@@ -4,9 +4,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Create a new tensor
-Tensor*
-tensor_create(const size_t* shape, size_t num_dims)
+/**
+ * Creates a new tensor with the given shape and number of dimensions.
+ *
+ * @param shape The shape of the tensor.
+ * @param num_dims The number of dimensions of the tensor.
+ * @return A pointer to the newly created tensor, or NULL if memory allocation fails.
+ */
+Tensor* tensor_create(const size_t* shape, size_t num_dims)
 {
   // Allocate memory for tensor
   Tensor* tensor = (Tensor*)malloc(sizeof(Tensor));
